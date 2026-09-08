@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Ray Tracer — Your Name</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<button class="rail__toggle" aria-label="Toggle navigation">☰</button>
+
+<div class="shell">
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <span class="name">Your Name</span>
+      <span class="role">Technical Artist</span>
+    </a>
+    <nav class="rail__nav">
+      <a href="index.html" data-accent="neutral">Home</a>
+      <div class="rail__section-label">Work</div>
+      <a href="project-shader.html" data-accent="shader">Shaders &amp; VFX</a>
+      <a href="project-postfx.html" data-accent="post">Fullscreen FX &amp; Post</a>
+      <a href="project-raytracer.html" data-accent="rt" class="active">Custom Ray Tracer</a>
+      <a href="index.html#art" data-accent="neutral">Art</a>
+      <div class="rail__section-label">Info</div>
+      <a href="index.html#about" data-accent="neutral">About</a>
+      <a href="index.html#contact" data-accent="neutral">Contact</a>
+    </nav>
+    <div class="rail__footer">
+      Résumé — <a href="#">PDF ↓</a><br>
+      <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="section" style="padding-top:72px;">
+      <div class="mono" style="font-size:12px; color:var(--rt);">CUSTOM RAY TRACER</div>
+      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:20ch;">
+        [Project title — e.g. "A from-scratch spectral path tracer"]
+      </h1>
+      <p style="font-size:17px; margin-top:18px; max-width:60ch;">
+        What it renders, what it's built in (CPU/C++, GPU/CUDA, compute shader), and why
+        you built it — usually: to understand rendering at a level engines hide from you.
+      </p>
+
+      <div class="readout" style="margin-top:40px;">
+        <div class="readout__item"><b>C++ / CUDA</b>language</div>
+        <div class="readout__item"><b>BVH + SAH</b>acceleration</div>
+        <div class="readout__item"><b>Path tracing</b>integrator</div>
+        <div class="readout__item"><b>6 weeks</b>timeframe</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel" style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;">
+        <span class="mono" style="font-size:13px; color:var(--text-faint);">▶ Replace with a render, or a video of the renderer converging frame by frame</span>
+      </div>
+    </section>
+
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">THE PROBLEM</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">Why build one from scratch</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Frame this as a learning/mastery goal, not a product need — e.g. wanting
+          to understand importance sampling, BSDF evaluation, or acceleration
+          structures well enough to debug them in a commercial engine.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">PROCESS</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">Building it up in stages</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          This is the strongest section for a ray tracer — show the visual
+          progression: ray-sphere intersection → diffuse-only → BVH added →
+          materials → importance sampling → denoising. Each stage is proof of
+          understanding, not just a finished render.
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap:16px; margin-top:24px;">
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:12px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">1. Primitives</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:12px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">2. Diffuse GI</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:12px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">3. BVH + materials</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:12px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">4. Final</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">TECHNICAL DETAIL</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">The core of it</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Show the piece with the most engineering weight — BVH traversal, the
+          integrator loop, or an importance-sampling function.
+        </p>
+        <pre class="panel mono" data-accent="rt" style="margin-top:20px; overflow-x:auto; font-size:13px; line-height:1.7; color:var(--text-dim);"><code>Color TraceRay(const Ray&amp; r, const BVH&amp; scene, int depth)
+{
+    if (depth &lt;= 0) return Color(0);
+
+    HitRecord rec;
+    if (!scene.Hit(r, 0.001f, INFINITY, rec))
+        return SampleSky(r.direction);
+
+    Ray scattered;
+    Color attenuation;
+    Color emitted = rec.material-&gt;Emitted(rec.u, rec.v, rec.p);
+
+    if (!rec.material-&gt;Scatter(r, rec, attenuation, scattered))
+        return emitted;
+
+    return emitted + attenuation * TraceRay(scattered, scene, depth - 1);
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="section" style="border-bottom:none;">
+      <div class="eyebrow-num">Result</div>
+      <p style="margin-top:14px; font-size:15px;">
+        Close with your best final renders — a couple of large images or a short
+        turntable/flythrough clip works well here.
+      </p>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;">
+        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
+          <span class="mono" style="font-size:12px; color:var(--rt);">Final render 1</span>
+        </div>
+        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
+          <span class="mono" style="font-size:12px; color:var(--rt);">Final render 2</span>
+        </div>
+      </div>
+
+      <div style="margin-top:56px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <a class="btn" href="project-postfx.html">← Fullscreen FX &amp; Post</a>
+        <a class="btn" href="index.html#art">Art →</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

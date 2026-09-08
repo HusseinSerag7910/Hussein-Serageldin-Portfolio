@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fullscreen FX &amp; Post-Processing — Your Name</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<button class="rail__toggle" aria-label="Toggle navigation">☰</button>
+
+<div class="shell">
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <span class="name">Your Name</span>
+      <span class="role">Technical Artist</span>
+    </a>
+    <nav class="rail__nav">
+      <a href="index.html" data-accent="neutral">Home</a>
+      <div class="rail__section-label">Work</div>
+      <a href="project-shader.html" data-accent="shader">Shaders &amp; VFX</a>
+      <a href="project-postfx.html" data-accent="post" class="active">Fullscreen FX &amp; Post</a>
+      <a href="project-raytracer.html" data-accent="rt">Custom Ray Tracer</a>
+      <a href="index.html#art" data-accent="neutral">Art</a>
+      <div class="rail__section-label">Info</div>
+      <a href="index.html#about" data-accent="neutral">About</a>
+      <a href="index.html#contact" data-accent="neutral">Contact</a>
+    </nav>
+    <div class="rail__footer">
+      Résumé — <a href="#">PDF ↓</a><br>
+      <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="section" style="padding-top:72px;">
+      <div class="mono" style="font-size:12px; color:var(--post);">FULLSCREEN FX &amp; POST-PROCESSING</div>
+      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:20ch;">
+        [Project title — e.g. "Custom render pipeline color grading tool"]
+      </h1>
+      <p style="font-size:17px; margin-top:18px; max-width:60ch;">
+        One or two sentences anyone can understand: what this pass or tool does,
+        and where it sits in the frame pipeline.
+      </p>
+
+      <div class="readout" style="margin-top:40px;">
+        <div class="readout__item"><b>Custom SRP</b>engine</div>
+        <div class="readout__item"><b>HLSL / C#</b>language</div>
+        <div class="readout__item"><b>0.8ms</b>frame cost</div>
+        <div class="readout__item"><b>3 weeks</b>timeframe</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel" style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;">
+        <span class="mono" style="font-size:13px; color:var(--text-faint);">▶ Replace with a video showing the effect toggled on/off, or scrubbed through settings</span>
+      </div>
+    </section>
+
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">THE PROBLEM</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">What the frame pipeline was missing</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Was there no unified grading step? Did artists have no way to preview a
+          look without a full engine rebuild? Was an existing bloom/SSAO pass too
+          costly on target hardware? Name the constraint precisely.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">PROCESS</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">Building the pass</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Explain the pipeline stage this slots into (pre/post tonemap, which
+          render targets it reads), what you tried first, and what changed your
+          approach — a naive full-res pass that was too slow, a bug in your
+          downsample chain, an artifact you had to solve for.
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:16px; margin-top:24px;">
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">Pipeline diagram</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">Debug buffer view</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">Final result</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">TECHNICAL DETAIL</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">The core of it</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Show the interesting fragment — a custom downsample/blur kernel, a tonemap
+          curve, a LUT application function.
+        </p>
+        <pre class="panel mono" data-accent="post" style="margin-top:20px; overflow-x:auto; font-size:13px; line-height:1.7; color:var(--text-dim);"><code>// Apply a 3D LUT to the graded color, with strength blend
+half3 ApplyLUT(half3 color, TEXTURE3D(lut), float strength)
+{
+    half3 uvw = saturate(color) * (LUT_SIZE - 1.0) / LUT_SIZE
+                + 0.5 / LUT_SIZE;
+    half3 graded = SAMPLE_TEXTURE3D(lut, sampler_LinearClamp, uvw).rgb;
+    return lerp(color, graded, strength);
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="section" style="border-bottom:none;">
+      <div class="eyebrow-num">Result</div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;">
+        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
+          <span class="mono" style="font-size:12px; color:var(--text-faint);">Before</span>
+        </div>
+        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
+          <span class="mono" style="font-size:12px; color:var(--post);">After</span>
+        </div>
+      </div>
+
+      <div style="margin-top:56px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <a class="btn" href="project-shader.html">← Shaders &amp; VFX</a>
+        <a class="btn" href="project-raytracer.html">Next: Custom Ray Tracer →</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

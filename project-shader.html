@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaders &amp; VFX — Your Name</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<button class="rail__toggle" aria-label="Toggle navigation">☰</button>
+
+<div class="shell">
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <span class="name">Your Name</span>
+      <span class="role">Technical Artist</span>
+    </a>
+    <nav class="rail__nav">
+      <a href="index.html" data-accent="neutral">Home</a>
+      <div class="rail__section-label">Work</div>
+      <a href="project-shader.html" data-accent="shader" class="active">Shaders &amp; VFX</a>
+      <a href="project-postfx.html" data-accent="post">Fullscreen FX &amp; Post</a>
+      <a href="project-raytracer.html" data-accent="rt">Custom Ray Tracer</a>
+      <a href="index.html#art" data-accent="neutral">Art</a>
+      <div class="rail__section-label">Info</div>
+      <a href="index.html#about" data-accent="neutral">About</a>
+      <a href="index.html#contact" data-accent="neutral">Contact</a>
+    </nav>
+    <div class="rail__footer">
+      Résumé — <a href="#">PDF ↓</a><br>
+      <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="section" style="padding-top:72px;">
+      <div class="mono" style="font-size:12px; color:var(--shader);">SHADERS &amp; VFX</div>
+      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:20ch;">
+        [Project title — e.g. "Stylized water shader with dynamic caustics"]
+      </h1>
+      <p style="font-size:17px; margin-top:18px; max-width:60ch;">
+        One or two sentences anyone can understand: what this shader does and where
+        it's used. Save the deep technical explanation for the sections below.
+      </p>
+
+      <div class="readout" style="margin-top:40px;">
+        <div class="readout__item"><b>Unity URP</b>engine</div>
+        <div class="readout__item"><b>HLSL</b>language</div>
+        <div class="readout__item"><b>0.4ms</b>frame cost</div>
+        <div class="readout__item"><b>2 weeks</b>timeframe</div>
+      </div>
+    </section>
+
+    <!-- HERO MEDIA -->
+    <section class="section">
+      <div class="panel" style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;">
+        <span class="mono" style="font-size:13px; color:var(--text-faint);">▶ Replace with a video/GIF capture of the shader running — motion sells this more than any screenshot</span>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">THE PROBLEM</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">What was broken, slow, or missing</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Describe the starting point. Was there no water shader at all? Was an
+          existing one too expensive on mobile? Did art direction call for something
+          the default shader graph couldn't do? Be specific — this is what shows you
+          understand constraints, not just aesthetics.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">PROCESS</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">How you got there</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Walk through your iterations. What approaches did you try and reject, and
+          why? Include node graph screenshots, wireframes, or reference imagery here.
+          If you tested a technique against a performance budget, show the numbers.
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:16px; margin-top:24px;">
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">Node graph / iteration 1</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">Node graph / iteration 2</span>
+          </div>
+          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
+            <span class="mono" style="font-size:11px; color:var(--text-faint);">Final result</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL DETAIL -->
+    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
+      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">TECHNICAL DETAIL</div>
+      <div>
+        <h2 style="font-size:24px; max-width:32ch;">The core of it</h2>
+        <p style="margin-top:14px; font-size:15px;">
+          Show a representative code snippet — the part that's actually clever, not
+          your whole shader file. Explain what it does in the paragraph above or below it.
+        </p>
+        <pre class="panel mono" data-accent="shader" style="margin-top:20px; overflow-x:auto; font-size:13px; line-height:1.7; color:var(--text-dim);"><code>// Gerstner wave offset, summed across N wave layers
+float3 GerstnerOffset(float2 uv, float time)
+{
+    float3 offset = 0;
+    for (int i = 0; i &lt; _WaveCount; i++)
+    {
+        float2 dir  = _WaveDir[i];
+        float  freq = _WaveFreq[i];
+        float  phase = dot(dir, uv) * freq + time * _WaveSpeed[i];
+
+        offset.xz += _Steepness[i] * dir * cos(phase);
+        offset.y  += sin(phase) * _WaveAmp[i];
+    }
+    return offset;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="section" style="border-bottom:none;">
+      <div class="eyebrow-num">Result</div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;">
+        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
+          <span class="mono" style="font-size:12px; color:var(--text-faint);">Before</span>
+        </div>
+        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
+          <span class="mono" style="font-size:12px; color:var(--shader);">After</span>
+        </div>
+      </div>
+
+      <div style="margin-top:56px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <a class="btn" href="index.html">← Back to work</a>
+        <a class="btn" href="project-postfx.html">Next: Fullscreen FX &amp; Post →</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

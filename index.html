@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hussein Serageldin — Game Developer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<button class="rail__toggle" aria-label="Toggle navigation">☰</button>
+
+<div class="shell">
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <span class="name">Hussein Serageldin</span>
+      <span class="role">Game Developer</span>
+    </a>
+    <nav class="rail__nav">
+      <a href="index.html" data-accent="neutral">Home</a>
+      <div class="rail__section-label">Work</div>
+      <a href="project-shader.html" data-accent="shader">Shaders &amp; VFX</a>
+      <a href="project-postfx.html" data-accent="post">Fullscreen FX &amp; Post</a>
+      <a href="project-raytracer.html" data-accent="rt">Custom Ray Tracer</a>
+      <a href="index.html#games" data-accent="neutral">Games</a>
+      <div class="rail__section-label">Info</div>
+      <a href="index.html#about" data-accent="neutral">About</a>
+      <a href="index.html#contact" data-accent="neutral">Contact</a>
+    </nav>
+    <div class="rail__footer">
+      <div class="rail__links">
+        <a href="#" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/resumeicon.svg" alt="">
+          </span>
+          <span>Résumé</span>
+        </a>
+        <a href="https://averageosiris.itch.io/" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/itchicon.svg" alt="">
+          </span>
+          <span>itch.io</span>
+        </a>
+        <a href="https://github.com/HusseinSerag7910" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/githubicon.svg" alt="">
+          </span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/husseinserag/" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/linkedinicon.svg" alt="">
+          </span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- HERO (condensed) -->
+    <section class="section hero-compact" style="padding-top:56px; padding-bottom:36px;">
+      <div class="hero-compact__intro">
+        <h1 class="hero-compact__title">
+          I'm <span style="color: var(--shader);">Hussein</span>, a programmer and artist with a passion for game development.
+        </h1>
+        <p class="hero-compact__lede">
+          I build shaders, effects, and rendering tools to create visually striking projects.
+        </p>
+      </div>
+
+      <div class="hero-compact__links">
+          <a href="#" class="hero-link">
+            <span class="hero-link__icon">
+              <img src="media/resumeicon.svg" alt="">
+            </span>
+            <span>Résumé</span>
+          </a>
+          <a href="https://averageosiris.itch.io/" class="hero-link">
+            <span class="hero-link__icon">
+              <img src="media/itchicon.svg" alt="">
+            </span>
+            <span>itch.io</span>
+          </a>
+          <a href="https://github.com/HusseinSerag7910" class="hero-link">
+            <span class="hero-link__icon">
+              <img src="media/githubicon.svg" alt="">
+            </span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/husseinserag/" class="hero-link">
+            <span class="hero-link__icon">
+              <img src="media/linkedinicon.svg" alt="">
+            </span>
+            <span>LinkedIn</span>
+          </a>
+      </div>
+    </section>
+
+    <!-- WORK (featured) -->
+    <section class="section work-featured" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num">My Work</div>
+
+      <div class="work-grid">
+
+        <a href="project-shader.html" class="work-card" data-accent="shader">
+          <div class="work-card__thumb">
+            <video src="media/shader-vfx.mp4" autoplay muted loop playsinline
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+            <span class="work-card__thumb-fallback mono">IMAGE / VIDEO</span>
+          </div>
+          <div class="work-card__body">
+            <div class="mono work-card__label" style="color: var(--shader);">01 — SHADERS &amp; VFX</div>
+            <h3 class="work-card__title">Real-time Shaders &amp; Particle Systems</h3>
+            <div class="mono work-card__link">View projects →</div>
+          </div>
+        </a>
+
+        <a href="project-postfx.html" class="work-card" data-accent="post">
+          <div class="work-card__thumb">
+            <video src="media/PigballClipCut.mp4" autoplay muted loop playsinline
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+            <span class="work-card__thumb-fallback mono">IMAGE / VIDEO</span>
+          </div>
+          <div class="work-card__body">
+            <div class="mono work-card__label" style="color: var(--post);">02 — POST-PROCESSING</div>
+            <h3 class="work-card__title">Fullscreen FX &amp; Compositing</h3>
+            <div class="mono work-card__link">View projects →</div>
+          </div>
+        </a>
+
+        <a href="project-raytracer.html" class="work-card" data-accent="rt">
+          <div class="work-card__thumb">
+            <img src="media/RayTracerRender.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="work-card__thumb-fallback mono">IMAGE / VIDEO</span>
+          </div>
+          <div class="work-card__body">
+            <div class="mono work-card__label" style="color: var(--rt);">03 — RAY TRACER</div>
+            <h3 class="work-card__title">Custom Python Ray Tracer</h3>
+            <div class="mono work-card__link">View project →</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- GAMES -->
+    <section class="section games-featured" id="games" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num">Play my Games</div>
+
+      <div class="game-grid">
+
+        <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/ANIVThumbnail.jpg" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">ANEURISM IV</div>
+        </a>
+
+        <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/PPEThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Pose Pose Execution</div>
+        </a>
+
+        <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/JusticeThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Justice is [Blank]</div>
+        </a>
+
+        <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/UnderfishedThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Under Fished</div>
+        </a>
+
+        <a href="#" class="game-card game-card--fill">
+          <div class="game-card__thumb">
+            <img src="media/OroboreaThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Oroborea</div>
+        </a>
+
+        <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/DataMinesThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Datamines</div>
+        </a>
+
+        <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/QcThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Quantum Cargo</div>
+        </a>
+
+                <a href="#" class="game-card">
+          <div class="game-card__thumb">
+            <img src="media/YggdrowsilThumbnail.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">YGGDROWSIL</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ART -->
+    <!-- <section class="section" id="art">
+      <div class="eyebrow-num">Art — supporting work</div>
+      <h2 style="font-size:28px; margin-top:16px; max-width:30ch;">Assets I make to test my own tools</h2>
+      <p style="margin-top:14px; font-size:15px;">
+        Most of the pieces below started as test cases for a shader or pipeline above —
+        hand-painted textures to stress-test a material graph, quick sculpts to check a
+        rig, sketches used as shader reference. A few smaller standalone pieces are here too.
+      </p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px;">
+        <div class="panel" style="aspect-ratio:4/3; display:flex; align-items:flex-end; padding:16px;">
+          <span class="mono" style="font-size:12px; color:var(--text-faint);">3D — placeholder</span>
+        </div>
+        <div class="panel" style="aspect-ratio:4/3; display:flex; align-items:flex-end; padding:16px;">
+          <span class="mono" style="font-size:12px; color:var(--text-faint);">3D — placeholder</span>
+        </div>
+        <div class="panel" style="aspect-ratio:4/3; display:flex; align-items:flex-end; padding:16px;">
+          <span class="mono" style="font-size:12px; color:var(--text-faint);">2D — placeholder</span>
+        </div>
+        <div class="panel" style="aspect-ratio:4/3; display:flex; align-items:flex-end; padding:16px;">
+          <span class="mono" style="font-size:12px; color:var(--text-faint);">2D — placeholder</span>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ABOUT -->
+    <section class="section" id="about" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="about-row">
+        <div class="eyebrow-num about-main">About</div>
+        <div class="eyebrow-num about-tools">Tools</div>
+      </div>
+      <div class="about-row" style="margin-top:8px;">
+        <div class="about-main">
+        <p style="font-size:22px;">
+          I'm a <span style="color: var(--post);">McGill</span> Computer Science Student in my final semester. I grew up playing video games and I was easily captivated
+          by the possibilities of the medium. What began as a recreational endeavor in 3D modeling, merged with my academic pursuits in CS,
+          enabling me to explore game development as both an artist and a programmer. Since beginning my undergraduate degree 3 years ago, I've had
+          the opportunity to work in AAA production pipelines at <span style="color: var(--rt);">Ubisoft</span>, as well as, contract as a tech artist for local <span style="color: var(--shader);">indie</span> studios.
+        </p>
+
+        <br/>
+
+        <p style="font-size:22px;">
+          I still love playing games.
+        </p>
+
+        <div class="now-playing">
+          <span class="now-playing__dot"></span>
+          <div>
+            <div class="mono now-playing__label">Currently Playing</div>
+            <div class="now-playing__game">Blasphemous II</div>
+          </div>
+        </div>
+        </div>
+        <div class="mono about-tools" style="font-size:18px; color:var(--text-dim);">
+          Unity · Blender · Photoshop<br>
+          HLSL · C# · Python · C++<br>
+          JavaScript · Java · C
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" style="border-bottom:none; padding-top: 24px; padding-bottom: 48px;" >
+      <div class="eyebrow-num">Contact</div>
+      <h2 style="font-size: clamp(16px, 4vw, 24px); margin-top:16px;">Connect with me</h2>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;">
+        <a class="btn btn--solid" href="mailto:hussein.serageldin@mail.mcgill.ca">hussein.serageldin@mail.mcgill.ca</a>
+        <a class="btn" href="https://www.linkedin.com/in/husseinserag/">LinkedIn</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
