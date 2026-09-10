@@ -65,9 +65,9 @@
         Shaders and particle systems created in <span style="color: var(--shader);">Unity URP</span>, using  <span style="color: var(--shader);">HLSL</span>
       </h1>
       <p style="font-size:24px; margin-top:18px; max-width:64ch;">
-        A series of shaders and particle systems implemented across a variety of game projects. 
-        These projects exhibit shaders built using a hybrid of node-based programming and HLSL code.
-        The VFX themselves are implemented across the Shuriken Particle System and the VFX Graph.
+        A series of shaders and particle systems built across a variety of game projects, combining
+        node-based programming with hand-written HLSL. The VFX themselves are implemented across the
+        Shuriken Particle System and the VFX Graph.
       </p>
 
       <div class="readout" style="margin-top:40px; gap: 50px;">
@@ -96,7 +96,7 @@
           <br>
           The shader reads lighting data from the scene, from the main light and all additional lights.
           This data is combined with the object's normal map data to create a mask for the shadows.
-          The threshold of the mask can be easily manipulated by the user via exposed properties. 
+          The threshold of the mask can be easily manipulated by the user via exposed properties.
           This mask is updated in real-time if the lights change or the object moves.
           <br>
           <br>
@@ -183,13 +183,13 @@
           <div class="game-card__body mono">VFX Showcase</div>
         </div>
         <p style="font-size:23px; flex:1 1 300px; min-width:0;">
-          All of the visual feedback for interaction between players depended on the VFX. 
+          The VFX carried all of the visual feedback for player interaction.
           <br><br>For each of the 4 possible moves,
-          I made two types of effects, one for the effect failing and one for it succeeding. The VFX that play are pre-calculated in a script at the end of each turn
+          I built two versions of each effect — one for a failed execution, one for a successful one. The VFX that play are pre-calculated in a script at the end of each turn
           and displayed during the execution phase. The failing effect matches the succeeding effect
           up to a certain point to maintain suspense as moves are executed against each other. Each of the 8 visual effects are made on Unity's
           node-based VFX graph. They include multiple particles and sub-emitters that are carefully timed and meticulously organized to make
-          player action feel responsive and satisfying. The VFX for different moves is also timed alongside one another to create the illusion of 
+          player action feel responsive and satisfying. The VFX for different moves is also timed alongside one another to create the illusion of
           genuine interaction.
         </p>
       </div>
@@ -242,7 +242,7 @@
         <div style="flex:1 1 260px; min-width:0;">
           <h4 style="font-size:22px;">Fire</h4>
           <p style="margin-top:10px; font-size:24px;">
-            A custom shader that uses a layered noise texture to dissolve a texture. 
+            A custom shader that uses a layered noise texture to dissolve a fire image texture. 
             The shader exposes properties for color and noise frequency/scale that the PS manipulates
             over a particle's lifetime. This effect is combined with a smoke particle system that uses a sprite sheet.
           </p>
@@ -311,7 +311,7 @@
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
               <span class="game-card__fallback mono">IMAGE / VIDEO</span>
             </div>
-            <div class="game-card__body mono">Rain — 1</div>
+            <div class="game-card__body mono">Falling Rain</div>
           </div>
           <div class="game-card game-card--fill" style="flex:1 1 220px;">
             <div class="game-card__thumb" style="aspect-ratio:16/9;">
@@ -319,7 +319,7 @@
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
               <span class="game-card__fallback mono">IMAGE / VIDEO</span>
             </div>
-            <div class="game-card__body mono">Rain — 2</div>
+            <div class="game-card__body mono">Ripple Collisions</div>
           </div>
         </div>
       </div>
