@@ -261,6 +261,10 @@ main{
   margin-top: 24px;
 }
 
+.effects-grid-2up{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .work-card{
   display: flex;
   flex-direction: column;
@@ -319,6 +323,7 @@ main{
 .game-card{
   display: flex;
   flex-direction: column;
+  min-width: 0;
   background: var(--bg-panel);
   border: 1px solid var(--line);
   transition: border-color .15s ease;
@@ -328,6 +333,7 @@ main{
 .game-card__thumb{
   position: relative;
   width: 100%;
+  min-width: 0;
   aspect-ratio: 130/103;
   background: #000;
   overflow: hidden;
@@ -583,7 +589,37 @@ main{
   color: var(--text-faint);
 }
 
+.card-carousel{ display: grid; }
+
+.stack-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+}
+
 @media (max-width: 860px){
+  .stack-grid{
+    grid-template-columns: 1fr;
+  }
+  .effects-grid-2up{
+    grid-template-columns: 1fr;
+  }
+  .card-carousel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .card-carousel > *{
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+
   .rail{
     position: fixed;
     left: 0; top: 0;
@@ -609,6 +645,24 @@ main{
   }
   .section{ padding: 72px 24px; }
   .game-grid{ grid-template-columns: repeat(2, 1fr); }
+
+  #about{
+    display: flex;
+    flex-direction: column;
+  }
+  #about .about-row{
+    display: contents;
+  }
+  #about .about-main,
+  #about .about-tools{
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+  }
+  #about .eyebrow-num.about-main{ order: 1; }
+  #about .about-main:not(.eyebrow-num){ order: 2; margin-top: 8px; }
+  #about .eyebrow-num.about-tools{ order: 3; margin-top: 32px; }
+  #about .about-tools:not(.eyebrow-num){ order: 4; margin-top: 8px; }
 }
 
 @media (min-width: 861px) and (max-width: 1080px){

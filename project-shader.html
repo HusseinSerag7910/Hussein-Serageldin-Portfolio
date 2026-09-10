@@ -107,8 +107,8 @@
           These shading effects are ultimately combined with an emission map and rim light to push the visual appeal.
 
         </p>
-        <div style="display:flex; gap:16px; flex:0 0 auto;">
-          <div class="game-card game-card--fill" style="width:470px;">
+        <div style="display:flex; gap:16px; flex-wrap:wrap; flex:1 1 400px; min-width:0;">
+          <div class="game-card game-card--fill" style="flex:1 1 220px; min-width:0;">
             <div class="game-card__thumb" style="aspect-ratio:1148/1380;">
               <img src="media/CharacterShaderScreenshot.png" alt="" loading="lazy"
                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -116,7 +116,7 @@
             </div>
             <div class="game-card__body mono">Shader used to emulate comic aesthetic</div>
           </div>
-          <div class="game-card game-card--fill" style="width:470px;">
+          <div class="game-card game-card--fill" style="flex:1 1 220px; min-width:0;">
             <div class="game-card__thumb" style="aspect-ratio:1148/1380;">
               <video src="media/CharacterShaderLightingClip.mp4" autoplay muted loop playsinline
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
@@ -129,7 +129,7 @@
 
       <h4 style="font-size: 22px; margin-top: 25px;">Showcasing shader versatility and a comparison with the default types</h4>
 
-      <div style="display:grid; grid-template-columns: repeat(3, minmax(260px, 1fr)); gap:28px; margin-top:20px; max-width:1200px;">
+      <div class="card-carousel" style="grid-template-columns: repeat(3, minmax(260px, 1fr)); gap:28px; margin-top:20px; max-width:1200px;">
 
         <div class="game-card game-card--fill">
           <div class="game-card__thumb" style="aspect-ratio:7/8;">
@@ -194,7 +194,7 @@
         </p>
       </div>
 
-      <div style="display:grid; grid-template-columns: repeat(3, minmax(240px, 1fr)); gap:24px; margin-top:28px;">
+      <div class="stack-grid" style="gap:24px; margin-top:28px;">
 
         <div class="game-card game-card--fill">
           <div class="game-card__thumb" style="aspect-ratio:16/9;">
