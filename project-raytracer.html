@@ -65,7 +65,7 @@
       <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:28ch;">
         A custom ray tracer, built in <span style="color: var(--rt);">Python</span> and <span style="color: var(--rt);">OpenGL</span>
       </h1>
-      <p style="font-size:24px; margin-top:18px; max-width:64ch;">
+      <p class="prose" style="--prose-size:24px; margin-top:18px; max-width:64ch;">
         A renderer that supports arbitrary mesh geometry with sphere, triangle-mesh, and AABB intersection. The
         ray tracer also contains a full lighting/shading pipeline with shadow rays, lights with quadratic attenuation, 
         and anti-aliasing via camera jitter. The project also includes a JSON parser for easy scene creation.
@@ -91,14 +91,14 @@
 
         <div class="work-card" data-accent="rt">
           <div class="work-card__thumb">
-            <img src="media/reflection.png" alt="" loading="lazy"
+            <img src="media/Reflection.png" alt="" loading="lazy"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <span class="work-card__thumb-fallback mono">IMAGE / VIDEO</span>
           </div>
           <div class="work-card__body">
             <div class="mono work-card__label" style="color: var(--rt);">01 — REFLECTION</div>
             <h3 class="work-card__title" style="font-size:28px;">Recursive reflection</h3>
-            <p style="margin-top:14px; font-size:24px;">
+            <p class="prose" style="margin-top:14px; --prose-size:24px;">
               Reflects the ray hitting a reflective surface and shades the object using whatever the
               reflected ray hits. This is applied recursively across a set number of bounces.
             </p>
@@ -107,14 +107,14 @@
 
         <div class="work-card" data-accent="rt">
           <div class="work-card__thumb">
-            <img src="media/redraction.png" alt="" loading="lazy"
+            <img src="media/Redraction.png" alt="" loading="lazy"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <span class="work-card__thumb-fallback mono">IMAGE / VIDEO</span>
           </div>
           <div class="work-card__body">
             <div class="mono work-card__label" style="color: var(--rt);">02 — REFRACTION</div>
             <h3 class="work-card__title" style="font-size:28px;">Refraction</h3>
-            <p style="margin-top:14px; font-size:24px;">
+            <p class="prose" style="margin-top:14px; --prose-size:24px;">
               Applies Snell's law with a constant index of refraction (η = 1.0 / 1.7) to
               bend rays through refractive surfaces, distorting what sits behind them. 
               In the sample image, the main sphere has a blue sphere behind it that is being flipped as a result of the refraction.
@@ -131,7 +131,7 @@
           <div class="work-card__body">
             <div class="mono work-card__label" style="color: var(--rt);">03 — SOFT SHADOWS</div>
             <h3 class="work-card__title" style="font-size:28px;">Area lights &amp; soft shadows</h3>
-            <p style="margin-top:14px; font-size:24px;">
+            <p class="prose" style="margin-top:14px; --prose-size:24px;">
               Samples different points across a square frame, treating each sample as a unique 
               point light with its own position. The different light contributions are averaged with 
               the total number of samples to create a soft lighting effect.
@@ -141,14 +141,14 @@
 
         <div class="work-card" data-accent="rt">
           <div class="work-card__thumb">
-            <img src="media/dof.png" alt="" loading="lazy"
+            <img src="media/Dof.png" alt="" loading="lazy"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <span class="work-card__thumb-fallback mono">IMAGE / VIDEO</span>
           </div>
           <div class="work-card__body">
             <div class="mono work-card__label" style="color: var(--rt);">04 — DEPTH OF FIELD</div>
             <h3 class="work-card__title" style="font-size:28px;">Depth of field blur</h3>
-            <p style="margin-top:14px; font-size:24px;">
+            <p class="prose" style="margin-top:14px; --prose-size:24px;">
               Samples random points on a unit circle, emitting rays from those 
               random points towards a focal point. The rays converge on the focal point (where the 
               image is clearest) and diverge elsewhere, so that unfocused areas appear blurry.

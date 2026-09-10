@@ -315,7 +315,8 @@ main{
 
 .game-grid{
   display: grid;
-  grid-template-columns: repeat(4, 360px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1536px;
   gap: 32px;
   margin-top: 24px;
 }
@@ -546,6 +547,27 @@ main{
   cursor: ew-resize;
   -webkit-appearance: none;
   appearance: none;
+}
+
+/* ---------- prose (body paragraphs on project pages) ---------- */
+
+.prose{
+  font-size: var(--prose-size, 17px);
+}
+
+@media (max-width: 1600px){
+  .prose{
+    font-size: calc(var(--prose-size, 17px) * 0.8);
+  }
+  :root{
+    --nav-w: 180px;
+  }
+  .rail__brand .name{ font-size: 16px; }
+  .rail__brand .role{ font-size: 12px; }
+  .rail__section-label{ font-size: 11px; }
+  .rail__nav a{ font-size: 14px; padding: 6px 6px 6px 8px; }
+  .rail__links .hero-link{ font-size: 12px; padding: 8px 10px; gap: 8px; }
+  .rail__links .hero-link__icon{ width: 16px; height: 16px; }
 }
 
 /* ---------- panel (replaces "card") ---------- */

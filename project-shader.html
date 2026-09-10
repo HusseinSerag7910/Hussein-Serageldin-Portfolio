@@ -64,7 +64,7 @@
       <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:28ch;">
         Shaders and particle systems created in <span style="color: var(--shader);">Unity URP</span>, using  <span style="color: var(--shader);">HLSL</span>
       </h1>
-      <p style="font-size:24px; margin-top:18px; max-width:64ch;">
+      <p class="prose" style="--prose-size:24px; margin-top:18px; max-width:64ch;">
         A series of shaders and particle systems built across a variety of game projects, combining
         node-based programming with hand-written HLSL. The VFX themselves are implemented across the
         Shuriken Particle System and the VFX Graph.
@@ -90,7 +90,7 @@
       </div>
 
       <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:20px;">
-        <p style="font-size:20px; flex:1 1 300px; min-width:0;">
+        <p class="prose" style="--prose-size:20px; flex:1 1 300px; min-width:0;">
           I built a fragment shader using Amplify Shader Editor and HLSL code to render objects in a graphic novel aesthetic.
           <br>
           <br>
@@ -182,7 +182,7 @@
           </div>
           <div class="game-card__body mono">VFX Showcase</div>
         </div>
-        <p style="font-size:23px; flex:1 1 300px; min-width:0;">
+        <p class="prose" style="--prose-size:23px; flex:1 1 300px; min-width:0;">
           The VFX carried all of the visual feedback for player interaction.
           <br><br>For each of the 4 possible moves,
           I built two versions of each effect — one for a failed execution, one for a successful one. The VFX that play are pre-calculated in a script at the end of each turn
@@ -241,7 +241,7 @@
       <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:24px;">
         <div style="flex:1 1 260px; min-width:0;">
           <h4 style="font-size:22px;">Fire</h4>
-          <p style="margin-top:10px; font-size:24px;">
+          <p class="prose" style="margin-top:10px; --prose-size:24px;">
             A custom shader that uses a layered noise texture to dissolve a fire image texture. 
             The shader exposes properties for color and noise frequency/scale that the PS manipulates
             over a particle's lifetime. This effect is combined with a smoke particle system that uses a sprite sheet.
@@ -270,7 +270,7 @@
       <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px;">
         <div style="flex:1 1 260px; min-width:0;">
           <h4 style="font-size:22px;">Water</h4>
-          <p style="margin-top:10px; font-size:24px;">
+          <p class="prose" style="margin-top:10px; --prose-size:24px;">
             A lightweight water simulation. This fragment shader uses a render texture and a particle system to
             generate normals for the water when an object moves on its surface. These normals create the impression of fluid motion.
             The shader itself uses refraction, the depth buffer, and edge detection (foam) for additional realism.
@@ -299,7 +299,7 @@
       <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px;">
         <div style="flex:1 1 260px; min-width:0;">
           <h4 style="font-size:22px;">Rain</h4>
-          <p style="margin-top:10px; font-size:24px;">
+          <p class="prose" style="margin-top:10px; --prose-size:24px;">
             Layered particle systems for the falling rain, with some particles triggering
             ripple sub-emitters on collision.
           </p>
