@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaders &amp; VFX — Your Name</title>
+<title>Shaders &amp; VFX — Hussein Serageldin</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
 <div class="shell">
   <aside class="rail">
     <a class="rail__brand" href="index.html">
-      <span class="name">Your Name</span>
-      <span class="role">Technical Artist</span>
+      <span class="name">Hussein Serageldin</span>
+      <span class="role">Game Developer</span>
     </a>
     <nav class="rail__nav">
       <a href="index.html" data-accent="neutral">Home</a>
@@ -22,123 +22,308 @@
       <a href="project-shader.html" data-accent="shader" class="active">Shaders &amp; VFX</a>
       <a href="project-postfx.html" data-accent="post">Fullscreen FX &amp; Post</a>
       <a href="project-raytracer.html" data-accent="rt">Custom Ray Tracer</a>
-      <a href="index.html#art" data-accent="neutral">Art</a>
+      <a href="index.html#games" data-accent="neutral">Games</a>
       <div class="rail__section-label">Info</div>
       <a href="index.html#about" data-accent="neutral">About</a>
       <a href="index.html#contact" data-accent="neutral">Contact</a>
     </nav>
     <div class="rail__footer">
-      Résumé — <a href="#">PDF ↓</a><br>
-      <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+      <div class="rail__links">
+        <a href="#" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/resumeicon.svg" alt="">
+          </span>
+          <span>Résumé</span>
+        </a>
+        <a href="https://averageosiris.itch.io/" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/itchicon.svg" alt="">
+          </span>
+          <span>itch.io</span>
+        </a>
+        <a href="https://github.com/HusseinSerag7910" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/githubicon.svg" alt="">
+          </span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/husseinserag/" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/linkedinicon.svg" alt="">
+          </span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </div>
   </aside>
 
   <main>
 
-    <section class="section" style="padding-top:72px;">
+     <section class="section" style="padding-top: 72px; padding-bottom: 48px;">
       <div class="mono" style="font-size:12px; color:var(--shader);">SHADERS &amp; VFX</div>
-      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:20ch;">
-        [Project title — e.g. "Stylized water shader with dynamic caustics"]
+      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:28ch;">
+        Shaders and particle systems created in <span style="color: var(--shader);">Unity URP</span>, using  <span style="color: var(--shader);">HLSL</span>
       </h1>
-      <p style="font-size:17px; margin-top:18px; max-width:60ch;">
-        One or two sentences anyone can understand: what this shader does and where
-        it's used. Save the deep technical explanation for the sections below.
+      <p style="font-size:24px; margin-top:18px; max-width:64ch;">
+        A series of shaders and particle systems implemented across a variety of game projects. 
+        These projects exhibit shaders built using a hybrid of node-based programming and HLSL code.
+        The VFX themselves are implemented across the Shuriken Particle System and the VFX Graph.
       </p>
 
-      <div class="readout" style="margin-top:40px;">
-        <div class="readout__item"><b>Unity URP</b>engine</div>
-        <div class="readout__item"><b>HLSL</b>language</div>
-        <div class="readout__item"><b>0.4ms</b>frame cost</div>
-        <div class="readout__item"><b>2 weeks</b>timeframe</div>
+      <div class="readout" style="margin-top:40px; gap: 50px;">
+        <div class="readout__item"><b>Unity URP</b>Engine</div>
+        <div class="readout__item"><b>HLSL</b>Shader Language</div>
+        <div class="readout__item"><b>Shuriken + VFX Graph</b>Tools</div>
       </div>
     </section>
 
-    <!-- HERO MEDIA -->
-    <section class="section">
-      <div class="panel" style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;">
-        <span class="mono" style="font-size:13px; color:var(--text-faint);">▶ Replace with a video/GIF capture of the shader running — motion sells this more than any screenshot</span>
-      </div>
-    </section>
+   <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num"><span style="color: var(--shader);">Project 1</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
+        Stylized shader for Custom Lighting Model
+      </h3>
 
-    <!-- PROBLEM -->
-    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
-      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">THE PROBLEM</div>
-      <div>
-        <h2 style="font-size:24px; max-width:32ch;">What was broken, slow, or missing</h2>
-        <p style="margin-top:14px; font-size:15px;">
-          Describe the starting point. Was there no water shader at all? Was an
-          existing one too expensive on mobile? Did art direction call for something
-          the default shader graph couldn't do? Be specific — this is what shows you
-          understand constraints, not just aesthetics.
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="shader">Unity URP</span>
+        <span class="badge" data-accent="shader">Amplify Shader Editor</span>
+        <span class="badge" data-accent="shader">HLSL</span>
+      </div>
+
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:20px;">
+        <p style="font-size:20px; flex:1 1 300px; min-width:0;">
+          I built a fragment shader using Amplify Shader Editor and HLSL code to render objects in a graphic novel aesthetic.
+          <br>
+          <br>
+          The shader reads lighting data from the scene, from the main light and all additional lights.
+          This data is combined with the object's normal map data to create a mask for the shadows.
+          The threshold of the mask can be easily manipulated by the user via exposed properties. 
+          This mask is updated in real-time if the lights change or the object moves.
+          <br>
+          <br>
+          The mask is used to define how shadows should render in dark regions. In this case, I use a tiered system
+          where the darkest regions are entirely black, mid shadows are cross-hatched, and lighter shadows are single-line hatched.
+          This is achieved through exposed properties that allow texture inputs for the shadow patterns. The lightest regions of the
+          object are overlayed with a halftone pattern (This is clear in the video).
+          These shading effects are ultimately combined with an emission map and rim light to push the visual appeal.
+
         </p>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
-      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">PROCESS</div>
-      <div>
-        <h2 style="font-size:24px; max-width:32ch;">How you got there</h2>
-        <p style="margin-top:14px; font-size:15px;">
-          Walk through your iterations. What approaches did you try and reject, and
-          why? Include node graph screenshots, wireframes, or reference imagery here.
-          If you tested a technique against a performance budget, show the numbers.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:16px; margin-top:24px;">
-          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
-            <span class="mono" style="font-size:11px; color:var(--text-faint);">Node graph / iteration 1</span>
+        <div style="display:flex; gap:16px; flex:0 0 auto;">
+          <div class="game-card game-card--fill" style="width:470px;">
+            <div class="game-card__thumb" style="aspect-ratio:1148/1380;">
+              <img src="media/CharacterShaderScreenshot.png" alt="" loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="game-card__fallback mono">IMAGE</span>
+            </div>
+            <div class="game-card__body mono">Shader used to emulate comic aesthetic</div>
           </div>
-          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
-            <span class="mono" style="font-size:11px; color:var(--text-faint);">Node graph / iteration 2</span>
-          </div>
-          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
-            <span class="mono" style="font-size:11px; color:var(--text-faint);">Final result</span>
+          <div class="game-card game-card--fill" style="width:470px;">
+            <div class="game-card__thumb" style="aspect-ratio:1148/1380;">
+              <video src="media/CharacterShaderLightingClip.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">VIDEO</span>
+            </div>
+            <div class="game-card__body mono">How the shader reacts to dynamic lights</div>
           </div>
         </div>
       </div>
+
+      <h4 style="font-size: 22px; margin-top: 25px;">Showcasing shader versatility and a comparison with the default types</h4>
+
+      <div style="display:grid; grid-template-columns: repeat(3, minmax(260px, 1fr)); gap:28px; margin-top:20px; max-width:1200px;">
+
+        <div class="game-card game-card--fill">
+          <div class="game-card__thumb" style="aspect-ratio:7/8;">
+            <img src="media/Lit.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Lit Shader</div>
+        </div>
+
+        <div class="game-card game-card--fill">
+          <div class="game-card__thumb" style="aspect-ratio:7/8;">
+            <img src="media/Unlit.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">Unlit Shader</div>
+        </div>
+
+        <div class="game-card game-card--fill">
+          <div class="game-card__thumb" style="aspect-ratio:7/8;">
+            <img src="media/Mine.png" alt="" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="game-card__fallback mono">IMAGE</span>
+          </div>
+          <div class="game-card__body mono">My Shader (using white halftones as the shadow pattern)</div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- TECHNICAL DETAIL -->
-    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
-      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">TECHNICAL DETAIL</div>
-      <div>
-        <h2 style="font-size:24px; max-width:32ch;">The core of it</h2>
-        <p style="margin-top:14px; font-size:15px;">
-          Show a representative code snippet — the part that's actually clever, not
-          your whole shader file. Explain what it does in the paragraph above or below it.
+    <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num"><span style="color: var(--shader);">Project 2</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
+        Attack VFX for <a href="https://flyingsheep22.itch.io/pose-pose-execution" style="color: var(--shader); text-decoration: underline;"> Pose Pose Execution</a>
+      </h3>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="shader">Unity URP</span>
+        <span class="badge" data-accent="shader">VFX Graph</span>
+        <span class="badge" data-accent="shader">Shader Graph</span>
+      </div>
+
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:20px;">
+        <div class="game-card game-card--fill" style="flex:1 1 400px;">
+          <div class="game-card__thumb" style="aspect-ratio:16/9;">
+            <video src="media/PPEVfxShowcaseClip.mp4" autoplay muted loop playsinline
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+            <span class="game-card__fallback mono">VIDEO</span>
+          </div>
+          <div class="game-card__body mono">VFX Showcase</div>
+        </div>
+        <p style="font-size:23px; flex:1 1 300px; min-width:0;">
+          All of the visual feedback for interaction between players depended on the VFX. 
+          <br><br>For each of the 4 possible moves,
+          I made two types of effects, one for the effect failing and one for it succeeding. The VFX that play are pre-calculated in a script at the end of each turn
+          and displayed during the execution phase. The failing effect matches the succeeding effect
+          up to a certain point to maintain suspense as moves are executed against each other. Each of the 8 visual effects are made on Unity's
+          node-based VFX graph. They include multiple particles and sub-emitters that are carefully timed and meticulously organized to make
+          player action feel responsive and satisfying. The VFX for different moves is also timed alongside one another to create the illusion of 
+          genuine interaction.
         </p>
-        <pre class="panel mono" data-accent="shader" style="margin-top:20px; overflow-x:auto; font-size:13px; line-height:1.7; color:var(--text-dim);"><code>// Gerstner wave offset, summed across N wave layers
-float3 GerstnerOffset(float2 uv, float time)
-{
-    float3 offset = 0;
-    for (int i = 0; i &lt; _WaveCount; i++)
-    {
-        float2 dir  = _WaveDir[i];
-        float  freq = _WaveFreq[i];
-        float  phase = dot(dir, uv) * freq + time * _WaveSpeed[i];
+      </div>
 
-        offset.xz += _Steepness[i] * dir * cos(phase);
-        offset.y  += sin(phase) * _WaveAmp[i];
-    }
-    return offset;
-}</code></pre>
+      <div style="display:grid; grid-template-columns: repeat(3, minmax(240px, 1fr)); gap:24px; margin-top:28px;">
+
+        <div class="game-card game-card--fill">
+          <div class="game-card__thumb" style="aspect-ratio:16/9;">
+            <video src="media/LightClip.mp4" muted loop playsinline controls
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+            <span class="game-card__fallback mono">VIDEO</span>
+          </div>
+          <div class="game-card__body mono">Light Attack</div>
+        </div>
+
+        <div class="game-card game-card--fill">
+          <div class="game-card__thumb" style="aspect-ratio:16/9;">
+            <video src="media/ParryClip.mp4" muted loop playsinline controls
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+            <span class="game-card__fallback mono">VIDEO</span>
+          </div>
+          <div class="game-card__body mono">Parry</div>
+        </div>
+
+        <div class="game-card game-card--fill">
+          <div class="game-card__thumb" style="aspect-ratio:16/9;">
+            <video src="media/HeavyWinClip.mp4" muted loop playsinline controls
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+            <span class="game-card__fallback mono">VIDEO</span>
+          </div>
+          <div class="game-card__body mono">Heavy Attack</div>
+        </div>
+
       </div>
     </section>
 
-    <!-- BEFORE / AFTER -->
-    <section class="section" style="border-bottom:none;">
-      <div class="eyebrow-num">Result</div>
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;">
-        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
-          <span class="mono" style="font-size:12px; color:var(--text-faint);">Before</span>
+    <section class="section" style="padding-top: 24px; padding-bottom: 48px; border-bottom: none;">
+      <div class="eyebrow-num"><span style="color: var(--shader);">Project 3</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
+        Shader graphs, particle systems, and sub-emitters for <a href="https://store.steampowered.com/app/2773280/ANEURISM_IV/" style="color: var(--shader); text-decoration: underline;">ANEURISM IV</a>
+      </h3>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="shader">Unity URP</span>
+        <span class="badge" data-accent="shader">Shader Graph</span>
+        <span class="badge" data-accent="shader">Shuriken Particle System</span>
+      </div>
+
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:24px;">
+        <div style="flex:1 1 260px; min-width:0;">
+          <h4 style="font-size:22px;">Fire</h4>
+          <p style="margin-top:10px; font-size:24px;">
+            A custom shader that uses a layered noise texture to dissolve a texture. 
+            The shader exposes properties for color and noise frequency/scale that the PS manipulates
+            over a particle's lifetime. This effect is combined with a smoke particle system that uses a sprite sheet.
+          </p>
         </div>
-        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
-          <span class="mono" style="font-size:12px; color:var(--shader);">After</span>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; flex:2 1 480px;">
+          <div class="game-card game-card--fill" style="flex:1 1 220px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/Fire.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">IMAGE / VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Natural Emission</div>
+          </div>
+          <div class="game-card game-card--fill" style="flex:1 1 220px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/FireCremator1.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">IMAGE / VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Flamethrower</div>
+          </div>
         </div>
       </div>
 
-      <div style="margin-top:56px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px;">
+        <div style="flex:1 1 260px; min-width:0;">
+          <h4 style="font-size:22px;">Water</h4>
+          <p style="margin-top:10px; font-size:24px;">
+            A lightweight water simulation. This fragment shader uses a render texture and a particle system to
+            generate normals for the water when an object moves on its surface. These normals create the impression of fluid motion.
+            The shader itself uses refraction, the depth buffer, and edge detection (foam) for additional realism.
+          </p>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; flex:2 1 480px;">
+          <div class="game-card game-card--fill" style="flex:1 1 220px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/WaterSim1.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">IMAGE / VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Ripples</div>
+          </div>
+          <div class="game-card game-card--fill" style="flex:1 1 220px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/WaterSim2.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">IMAGE / VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Idle Movement</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px;">
+        <div style="flex:1 1 260px; min-width:0;">
+          <h4 style="font-size:22px;">Rain</h4>
+          <p style="margin-top:10px; font-size:24px;">
+            Layered particle systems for the falling rain, with some particles triggering
+            ripple sub-emitters on collision.
+          </p>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; flex:2 1 480px;">
+          <div class="game-card game-card--fill" style="flex:1 1 220px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/RainRecording1.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">IMAGE / VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Rain — 1</div>
+          </div>
+          <div class="game-card game-card--fill" style="flex:1 1 220px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/RainRecording2.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">IMAGE / VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Rain — 2</div>
+          </div>
+        </div>
+      </div>
+            <div style="margin-top:56px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
         <a class="btn" href="index.html">← Back to work</a>
         <a class="btn" href="project-postfx.html">Next: Fullscreen FX &amp; Post →</a>
       </div>

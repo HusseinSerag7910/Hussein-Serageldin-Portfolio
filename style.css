@@ -25,6 +25,7 @@
   --post-dim:   #285A53;
   --rt:         hsl(0, 92%, 58%);
   --rt-dim:     #473B6B;
+  --gold:       #D4A94A;
 
   --font-display: 'Archivo', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -337,6 +338,11 @@ main{
   height: 100%;
   object-fit: contain;
 }
+.game-card__thumb video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .game-card--fill .game-card__thumb{ padding: 0; }
 .game-card--fill .game-card__thumb img{ object-fit: cover; }
 
@@ -357,9 +363,25 @@ main{
 
 .game-card__body{
   padding: 12px 14px;
-  font-size: 16px;
-  color: var(--text-dim);
   border-top: 1px solid var(--line);
+}
+.game-card__title-sm{
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.game-card__accolade{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--gold);
+}
+.game-card__accolade::before{
+  content: '★';
+  flex-shrink: 0;
 }
 
 /* ---------- now playing (small personality card) ---------- */
@@ -415,6 +437,109 @@ main{
   flex: 1 1 200px;
   max-width: 320px;
   min-width: 0;
+}
+
+/* ---------- badge (tech / tag pill) ---------- */
+
+.badge{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.badge[data-accent="shader"]{ border-color: var(--shader-dim); color: var(--shader); }
+.badge[data-accent="post"]{ border-color: var(--post-dim); color: var(--post); }
+.badge[data-accent="rt"]{ border-color: var(--rt-dim); color: var(--rt); }
+
+/* ---------- compare slider (before / after drag) ---------- */
+
+.compare-slider__frame{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  --pos: 50%;
+}
+.compare-slider__frame img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+.compare-slider__before{ z-index: 1; }
+.compare-slider__after{
+  z-index: 2;
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+.compare-slider__fallback{
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  background:
+    repeating-linear-gradient(45deg, var(--line-soft) 0 1px, transparent 1px 9px);
+}
+.compare-slider__tag{
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 3px 8px;
+  pointer-events: none;
+}
+.compare-slider__tag--before{ left: 10px; }
+.compare-slider__tag--after{ right: 10px; }
+.compare-slider__divider{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+  z-index: 4;
+  pointer-events: none;
+}
+.compare-slider__divider::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--text);
+  transform: translate(-50%, -50%);
+}
+.compare-slider__input{
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 /* ---------- panel (replaces "card") ---------- */

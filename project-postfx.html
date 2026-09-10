@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fullscreen FX &amp; Post-Processing — Your Name</title>
+<title>Fullscreen FX &amp; Post-Processing — Hussein Serageldin</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
 <div class="shell">
   <aside class="rail">
     <a class="rail__brand" href="index.html">
-      <span class="name">Your Name</span>
-      <span class="role">Technical Artist</span>
+      <span class="name">Hussein Serageldin</span>
+      <span class="role">Game Developer</span>
     </a>
     <nav class="rail__nav">
       <a href="index.html" data-accent="neutral">Home</a>
@@ -22,107 +22,209 @@
       <a href="project-shader.html" data-accent="shader">Shaders &amp; VFX</a>
       <a href="project-postfx.html" data-accent="post" class="active">Fullscreen FX &amp; Post</a>
       <a href="project-raytracer.html" data-accent="rt">Custom Ray Tracer</a>
-      <a href="index.html#art" data-accent="neutral">Art</a>
+      <a href="index.html#games" data-accent="neutral">Games</a>
       <div class="rail__section-label">Info</div>
       <a href="index.html#about" data-accent="neutral">About</a>
       <a href="index.html#contact" data-accent="neutral">Contact</a>
     </nav>
     <div class="rail__footer">
-      Résumé — <a href="#">PDF ↓</a><br>
-      <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+      <div class="rail__links">
+        <a href="#" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/resumeicon.svg" alt="">
+          </span>
+          <span>Résumé</span>
+        </a>
+        <a href="https://averageosiris.itch.io/" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/itchicon.svg" alt="">
+          </span>
+          <span>itch.io</span>
+        </a>
+        <a href="https://github.com/HusseinSerag7910" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/githubicon.svg" alt="">
+          </span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/husseinserag/" class="hero-link">
+          <span class="hero-link__icon">
+            <img src="media/linkedinicon.svg" alt="">
+          </span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </div>
   </aside>
 
   <main>
 
-    <section class="section" style="padding-top:72px;">
-      <div class="mono" style="font-size:12px; color:var(--post);">FULLSCREEN FX &amp; POST-PROCESSING</div>
-      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:20ch;">
-        [Project title — e.g. "Custom render pipeline color grading tool"]
+    <section class="section" style="padding-top: 72px; padding-bottom: 48px;">
+      <div class="mono" style="font-size:12px; color:var(--post);">FULLSCREEN FX &amp; POST</div>
+      <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:28ch;">
+        Fullscreen effects and compositing in <span style="color: var(--post);">Unity URP</span>
       </h1>
-      <p style="font-size:17px; margin-top:18px; max-width:60ch;">
-        One or two sentences anyone can understand: what this pass or tool does,
-        and where it sits in the frame pipeline.
+      <p style="font-size:24px; margin-top:18px; max-width:64ch;">
+        A series of fullscreen effects and post processing implemented across a variety of game projects. 
+        Many of these effects are created in shader graph and HLSL, they capitalize on built-in rendering tools to
+        create distinct aesthetics and push the visual limitations of the engine.
       </p>
 
-      <div class="readout" style="margin-top:40px;">
-        <div class="readout__item"><b>Custom SRP</b>engine</div>
-        <div class="readout__item"><b>HLSL / C#</b>language</div>
-        <div class="readout__item"><b>0.8ms</b>frame cost</div>
-        <div class="readout__item"><b>3 weeks</b>timeframe</div>
+      <div class="readout" style="margin-top:40px; gap: 50px;">
+        <div class="readout__item"><b>Unity URP</b>Engine</div>
+        <div class="readout__item"><b>HLSL</b>Shader Language</div>
+        <div class="readout__item"><b>Fullscreen Shader Graph </b>Tools</div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel" style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;">
-        <span class="mono" style="font-size:13px; color:var(--text-faint);">▶ Replace with a video showing the effect toggled on/off, or scrubbed through settings</span>
-      </div>
-    </section>
+    <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num"><span style="color: var(--post);">Project 1</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
+        Seamless World Change for <a href="https://flyingsheep22.itch.io/pose-pose-execution" style="color: var(--post); text-decoration: underline;">Pose Pose Execution</a>
+      </h3>
 
-    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
-      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">THE PROBLEM</div>
-      <div>
-        <h2 style="font-size:24px; max-width:32ch;">What the frame pipeline was missing</h2>
-        <p style="margin-top:14px; font-size:15px;">
-          Was there no unified grading step? Did artists have no way to preview a
-          look without a full engine rebuild? Was an existing bloom/SSAO pass too
-          costly on target hardware? Name the constraint precisely.
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="post">Unity URP</span>
+        <span class="badge" data-accent="post">Shader Graph</span>
+        <span class="badge" data-accent="post">C#</span>
+      </div>
+
+      <div style="margin-top:20px;">
+        <p style="font-size:24px; max-width:none;">
+          This world change effect is intended to simulate a seamless background change in 3D. The effect uses a camera that only renders
+          the characters, isolating them from the background. This is the mask used by the fullscreen shader, as it encompasses the world with a render texture containing the objects
+          and particles of the new scene. The logic of this effect is heavily inspired by traditional green screen technology.
+          To create the cleanest transition possible, this shader uses three different cameras, and a depth based noise texture to unveil the new background.
         </p>
-      </div>
-    </section>
-
-    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
-      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">PROCESS</div>
-      <div>
-        <h2 style="font-size:24px; max-width:32ch;">Building the pass</h2>
-        <p style="margin-top:14px; font-size:15px;">
-          Explain the pipeline stage this slots into (pre/post tonemap, which
-          render targets it reads), what you tried first, and what changed your
-          approach — a naive full-res pass that was too slow, a bug in your
-          downsample chain, an artifact you had to solve for.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:16px; margin-top:24px;">
-          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
-            <span class="mono" style="font-size:11px; color:var(--text-faint);">Pipeline diagram</span>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:20px;">
+          <div class="game-card game-card--fill" style="flex:1 1 320px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/DomainExpansionShowcase.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Endgame world change effect</div>
           </div>
-          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
-            <span class="mono" style="font-size:11px; color:var(--text-faint);">Debug buffer view</span>
-          </div>
-          <div class="panel" style="aspect-ratio:1/1; display:flex; align-items:flex-end; padding:14px;">
-            <span class="mono" style="font-size:11px; color:var(--text-faint);">Final result</span>
+          <div class="game-card game-card--fill" style="flex:1 1 320px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <img src="media/DomainExpansionGraph.png" alt="" loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="game-card__fallback mono">IMAGE</span>
+            </div>
+            <div class="game-card__body mono">Shader graph snippet for alpha calculations</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="display:grid; grid-template-columns: 160px 1fr; gap:32px;">
-      <div class="mono" style="font-size:12px; color:var(--text-faint); padding-top:4px;">TECHNICAL DETAIL</div>
-      <div>
-        <h2 style="font-size:24px; max-width:32ch;">The core of it</h2>
-        <p style="margin-top:14px; font-size:15px;">
-          Show the interesting fragment — a custom downsample/blur kernel, a tonemap
-          curve, a LUT application function.
+    <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num"><span style="color: var(--post);">Project 2</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
+        Retro PSX Horror with <a href="https://averageosiris.itch.io/underfished" style="color: var(--post); text-decoration: underline;">Underfished</a>
+      </h3>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="post">Unity URP</span>
+        <span class="badge" data-accent="post">Shader Graph</span>
+        <span class="badge" data-accent="post">HLSL</span>
+      </div>
+
+      <div style="margin-top:20px;">
+        <p style="font-size:24px; max-width:none;">
+          I was inspired by Buckshot Roulette in exploring a retro-style aesthetic for this game. 
+          The posterization and dither effects are combined in a full-screen shader. 
+          The posterization is achieved by converting the image’s colorspace to HSV, then clamping 
+          the outputs of the “value” using a series of math operators before converting the image back to RGB. <br><br> To achieve the pixelization effect, 
+          the camera doesn’t actually render the scene, but it outputs a render texture that displays a 
+          downscaled version of what the camera would actually be seeing. The video showcases how these effects 
+          change in relation to the game’s day-night cycle.
         </p>
-        <pre class="panel mono" data-accent="post" style="margin-top:20px; overflow-x:auto; font-size:13px; line-height:1.7; color:var(--text-dim);"><code>// Apply a 3D LUT to the graded color, with strength blend
-half3 ApplyLUT(half3 color, TEXTURE3D(lut), float strength)
-{
-    half3 uvw = saturate(color) * (LUT_SIZE - 1.0) / LUT_SIZE
-                + 0.5 / LUT_SIZE;
-    half3 graded = SAMPLE_TEXTURE3D(lut, sampler_LinearClamp, uvw).rgb;
-    return lerp(color, graded, strength);
-}</code></pre>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:20px;">
+          <div class="game-card game-card--fill" style="flex:1 1 320px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media/UnderfishedRecording.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Visualization of day cycle</div>
+          </div>
+          <div class="game-card game-card--fill" style="flex:1 1 320px;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <img src="media/underfishedScreenshot.png" alt="" loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="game-card__fallback mono">IMAGE</span>
+            </div>
+            <div class="game-card__body mono">Game screenshot</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" style="border-bottom:none;">
-      <div class="eyebrow-num">Result</div>
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;">
-        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
-          <span class="mono" style="font-size:12px; color:var(--text-faint);">Before</span>
-        </div>
-        <div class="panel" style="border:none; aspect-ratio:4/3; display:flex; align-items:flex-end;">
-          <span class="mono" style="font-size:12px; color:var(--post);">After</span>
+    <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num"><span style="color: var(--post);">Project 3</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
+        Shader Stacks &amp; Global Volume Compositing 
+      </h3>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="post">Unity URP</span>
+        <span class="badge" data-accent="post">Shader Graph</span>
+      </div>
+
+      <div style="margin-top:20px;">
+        <p style="font-size:24px; max-width:none;">
+          I use layers of fullscreen effects and color-grading to refine the visual style and enhance the assets in the scene.
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:20px;">
+
+          <div class="game-card" style="flex:1 1 320px;">
+            <div class="compare-slider__frame" style="aspect-ratio:16/9;">
+              <img class="compare-slider__before" src="media/PigballBefore.png" alt="Before" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.compare-slider__fallback').style.display='flex';">
+              <img class="compare-slider__after" src="media/PigballAfter.png" alt="After" loading="lazy">
+              <span class="compare-slider__fallback mono">IMAGE</span>
+              <span class="compare-slider__tag compare-slider__tag--before">Before</span>
+              <span class="compare-slider__tag compare-slider__tag--after">After</span>
+              <div class="compare-slider__divider"></div>
+              <input type="range" class="compare-slider__input" min="0" max="100" value="50"
+                     aria-label="Before / after comparison slider"
+                     oninput="this.parentElement.style.setProperty('--pos', this.value + '%')">
+            </div>
+            <div class="mono" style="padding:14px 14px 16px; font-size:20px; color:var(--text-dim);">
+              Shader stack:
+              <ul style="margin:10px 0 0; padding-left:20px;">
+                <li>Color-grading and tonemapping layer to refine palette and increase visual appeal</li>
+                <li>Posterization/color-quantization layer that significantly limits tone variation, mixes nicely with film grain</li>
+                <li>Fine screen UV manipulation that distorts image to achieve paint splatter effect</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="game-card" style="flex:1 1 320px;">
+            <div class="compare-slider__frame" style="aspect-ratio:16/9;">
+              <img class="compare-slider__before" src="media/PPEAfter.png" alt="Before" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.compare-slider__fallback').style.display='flex';">
+              <img class="compare-slider__after" src="media/PPEBefore.png" alt="After" loading="lazy">
+              <span class="compare-slider__fallback mono">IMAGE</span>
+              <span class="compare-slider__tag compare-slider__tag--before">Before</span>
+              <span class="compare-slider__tag compare-slider__tag--after">After</span>
+              <div class="compare-slider__divider"></div>
+              <input type="range" class="compare-slider__input" min="0" max="100" value="50"
+                     aria-label="Before / after comparison slider"
+                     oninput="this.parentElement.style.setProperty('--pos', this.value + '%')">
+            </div>
+            <div class="mono" style="padding:14px 14px 16px; font-size:20px; color:var(--text-dim);">
+              Shader stack:
+              <ul style="margin:10px 0 0; padding-left:20px;">
+                <li>Fresnel edge detection to add a soft glow to edges</li>
+                <li>Backface outlines created by duplicating screen and offsetting UVs of scene depth</li>
+                <li>CRT-style filter that adds slight chromatic aberration, emission, and tint</li>
+                <li>Color-grading, tonemapping, and bloom via Global Volume object</li>
+                <li>Dither and slight pixelization to push retro aesthetic</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
 
