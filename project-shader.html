@@ -62,18 +62,18 @@
      <section class="section" style="padding-top: 72px; padding-bottom: 48px;">
       <div class="mono" style="font-size:12px; color:var(--shader);">SHADERS &amp; VFX</div>
       <h1 style="font-size: clamp(32px, 5vw, 56px); margin-top:16px; max-width:28ch;">
-        Shaders and particle systems created in <span style="color: var(--shader);">Unity URP</span>, using  <span style="color: var(--shader);">HLSL</span>
+        Shaders and VFX created in <span style="color: var(--shader);">Unity URP</span> and <span style="color: var(--shader);">Unreal Engine</span>, using  <span style="color: var(--shader);">HLSL</span>
       </h1>
       <p class="prose" style="--prose-size:24px; margin-top:18px; max-width:64ch;">
         A series of shaders and particle systems built across a variety of game projects, combining
-        node-based programming with hand-written HLSL. The VFX themselves are implemented across the
-        Shuriken Particle System and the VFX Graph.
+        node-based programming with hand-written HLSL. The VFX themselves are implemented across Niagara, the
+        Shuriken Particle System, and the VFX Graph.
       </p>
 
       <div class="readout" style="margin-top:40px; gap: 50px;">
-        <div class="readout__item"><b>Unity URP</b>Engine</div>
+        <div class="readout__item"><b>Unity URP / Unreal Engine</b>Engines</div>
         <div class="readout__item"><b>HLSL</b>Shader Language</div>
-        <div class="readout__item"><b>Shuriken + VFX Graph</b>Tools</div>
+        <div class="readout__item"><b>Niagara / Shuriken / VFX Graph</b>Tools</div>
       </div>
     </section>
 
@@ -164,6 +164,50 @@
     <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
       <div class="eyebrow-num"><span style="color: var(--shader);">Project 2</span></div>
       <h3 class="work-card__title" style="font-size:28px;">
+        Blood Splatter FX for <a href="https://sel-fie.itch.io/slaughterhouse" style="color: var(--shader); text-decoration: underline;"> Slaughterhouse</a>
+      </h3>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <span class="badge" data-accent="shader">Unreal Engine</span>
+        <span class="badge" data-accent="shader">Niagara</span>
+        <span class="badge" data-accent="shader">HLSL</span>
+        <span class="badge" data-accent="shader">Blueprints</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:24px; margin-top:20px;">
+        <p class="prose" style="--prose-size:23px; min-width:0; max-width:none;">
+          I created this blood splatter effect in UE5 using a custom blood material, decal material and their combination in a Niagara system. 
+          The blood material uses a dissolve effect based on the light/dark values of the texture to fade out the blood over time, and the decal material is similarly used to project and dissolve the blood on surfaces.
+          The Niagara system controls the spawning and behavior of the blood particles, including their velocity, rotation, and lifetime.
+          There are two emitters that control the explosion of blood; the first emitter spawns a large number of particles in a condensed space, the second emitter spawns a smaller number of particles in a wider area to create a more dispersed, exaggerated effect.
+          The third emitter is triggered when blood particles collide with a surface, spawning a decal to create the impression of blood splatter on the environment.
+          The effect attached to the player actor, it triggers when the character dies.
+
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; width:100%; min-width:0;">
+          <div class="game-card game-card--fill" style="flex:1 1 280px; min-width:0;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <video src="media\unknown_2026.10.14-11.51_clip_1.mp4" autoplay muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="game-card__fallback mono">VIDEO</span>
+            </div>
+            <div class="game-card__body mono">Blood Splatter Effect</div>
+          </div>
+          <div class="game-card game-card--fill" style="flex:1 1 280px; min-width:0;">
+            <div class="game-card__thumb" style="aspect-ratio:16/9;">
+              <img src="media\BloodFxNiagaraSystem.png" alt="" loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="game-card__fallback mono">IMAGE</span>
+            </div>
+            <div class="game-card__body mono">Niagara System</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 24px; padding-bottom: 48px;">
+      <div class="eyebrow-num"><span style="color: var(--shader);">Project 3</span></div>
+      <h3 class="work-card__title" style="font-size:28px;">
         Attack VFX for <a href="https://flyingsheep22.itch.io/pose-pose-execution" style="color: var(--shader); text-decoration: underline;"> Pose Pose Execution</a>
       </h3>
 
@@ -227,7 +271,7 @@
     </section>
 
     <section class="section" style="padding-top: 24px; padding-bottom: 48px; border-bottom: none;">
-      <div class="eyebrow-num"><span style="color: var(--shader);">Project 3</span></div>
+      <div class="eyebrow-num"><span style="color: var(--shader);">Project 4</span></div>
       <h3 class="work-card__title" style="font-size:28px;">
         Shader graphs, particle systems, and sub-emitters for <a href="https://store.steampowered.com/app/2773280/ANEURISM_IV/" style="color: var(--shader); text-decoration: underline;">ANEURISM IV</a>
       </h3>
@@ -267,7 +311,7 @@
         </div>
       </div>
 
-      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px;">
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px; padding-top:40px; border-top:1px solid var(--line);">
         <div style="flex:1 1 260px; min-width:0;">
           <h4 style="font-size:22px;">Water</h4>
           <p class="prose" style="margin-top:10px; --prose-size:24px;">
@@ -296,7 +340,7 @@
         </div>
       </div>
 
-      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px;">
+      <div style="display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; margin-top:40px; padding-top:40px; border-top:1px solid var(--line);">
         <div style="flex:1 1 260px; min-width:0;">
           <h4 style="font-size:22px;">Rain</h4>
           <p class="prose" style="margin-top:10px; --prose-size:24px;">

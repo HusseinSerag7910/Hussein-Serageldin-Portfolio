@@ -1,10 +1,4 @@
-/* ============================================================
-   TECH ART PORTFOLIO — design tokens
-   Concept: a DCC viewport / G-buffer readout, not a marketing page.
-   Flat panels, hairline rules, sharp corners, no drop shadows.
-   Accent colors are drawn from real buffer-visualization hues:
-   emissive-orange (shaders), LUT-teal (post fx), GI-violet (ray tracer).
-   ============================================================ */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
@@ -97,7 +91,7 @@ img, video{ max-width: 100%; display: block; }
   z-index: 1;
 }
 
-/* left rail nav, like a DCC outliner panel */
+/* left rail nav*/
 .rail{
   width: var(--nav-w);
   flex-shrink: 0;
@@ -206,7 +200,7 @@ main{
 
 .hero-compact__intro{ min-width: 0; }
 .hero-compact__title{
-  font-size: clamp(20px, 2.4vw, 28px);
+  font-size: clamp(20px, 2.4vw, max(28px, 1.37vw));
   line-height: 1.2;
   margin-top: 10px;
   max-width: 72ch;
@@ -316,7 +310,6 @@ main{
 .game-grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 1536px;
   gap: 32px;
   margin-top: 24px;
 }
@@ -368,12 +361,15 @@ main{
     repeating-linear-gradient(45deg, var(--line-soft) 0 1px, transparent 1px 9px);
 }
 
+/* Card text scales with viewport width: unchanged at 2048px (1440p at 125%),
+   proportionally larger above that, never below the base size. */
 .game-card__body{
   padding: 12px 14px;
   border-top: 1px solid var(--line);
+  font-size: clamp(16px, calc(16px + (100vw - 2048px) * 0.0045), 20px);
 }
 .game-card__title-sm{
-  font-size: 16px;
+  font-size: clamp(16px, calc(16px + (100vw - 2048px) * 0.0045), 20px);
   font-weight: 600;
   color: var(--text);
 }
@@ -382,7 +378,7 @@ main{
   align-items: center;
   gap: 5px;
   margin-top: 6px;
-  font-size: 11px;
+  font-size: clamp(11px, calc(11px + (100vw - 2048px) * 0.003), 13px);
   line-height: 1.4;
   color: var(--gold);
 }
@@ -437,12 +433,11 @@ main{
 }
 .about-main{
   flex: 2 1 480px;
-  max-width: 900px;
   min-width: 0;
 }
+.about-main p{ max-width: none; }
 .about-tools{
   flex: 1 1 200px;
-  max-width: 320px;
   min-width: 0;
 }
 
@@ -552,13 +547,14 @@ main{
 /* ---------- prose (body paragraphs on project pages) ---------- */
 
 .prose{
-  font-size: var(--prose-size, 17px);
+  font-size: clamp(
+    calc(var(--prose-size, 17px) * 0.8),
+    calc(var(--prose-size, 17px) * 0.87 + (100vw - 1536px) * 0.0113),
+    calc(var(--prose-size, 17px) * 1.5)
+  );
 }
 
 @media (max-width: 1600px){
-  .prose{
-    font-size: calc(var(--prose-size, 17px) * 0.8);
-  }
   :root{
     --nav-w: 180px;
   }
@@ -612,6 +608,16 @@ main{
 }
 
 .card-carousel{ display: grid; }
+
+.pair-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 860px){
+  .pair-grid{ grid-template-columns: minmax(0, 1fr); }
+}
 
 .stack-grid{
   display: grid;
